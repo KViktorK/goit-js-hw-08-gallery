@@ -10,7 +10,7 @@ const refs = {
 const createListItem = galleryArr.map(({original,preview,description}) => {
     const liItem = document.createElement('li');
     liItem.insertAdjacentHTML('afterbegin',
-    `<li class="gallery__item">
+    `
     <a
     class="gallery__link"
     href="${original}"
@@ -22,7 +22,7 @@ const createListItem = galleryArr.map(({original,preview,description}) => {
       alt="${description}"
     />
   </a>
-</li>`
+`
     )
     return liItem
 })
