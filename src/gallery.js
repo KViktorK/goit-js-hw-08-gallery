@@ -8,9 +8,8 @@ const refs = {
 }
 // Создание разметки
 const createListItem = galleryArr.map(({original,preview,description}) => {
-    const liItem = document.createElement('li');
-    liItem.insertAdjacentHTML('afterbegin',
-    `
+    refs.gallery.insertAdjacentHTML('beforeend',
+    `<li class="gallery__item">
     <a
     class="gallery__link"
     href="${original}"
@@ -22,11 +21,11 @@ const createListItem = galleryArr.map(({original,preview,description}) => {
       alt="${description}"
     />
   </a>
-`
+</li>`
     )
-    return liItem
+    return refs.gallery
 })
-refs.gallery.append(...createListItem)
+
 
 // Делегирование 
 refs.gallery.addEventListener('click', e => {
